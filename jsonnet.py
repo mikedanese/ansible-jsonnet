@@ -127,7 +127,7 @@ class ActionModule(ActionBase):
 
             temp_vars = task_vars.copy()
             if 'hostvars' in temp_vars['vars']:
-              del temp_vars['hostvars']
+              del temp_vars['vars']['hostvars']
 
             # Create a new searchpath list to assign to the templar environment's file
             # loader, so that it knows about the other paths to find template files
