@@ -125,8 +125,8 @@ class ActionModule(ActionBase):
             with open(source, 'r') as f:
                 template_data = to_unicode(f.read())
 
-            temp_vars = task_vars['vars'].copy()
-            if 'hostvars' in temp_vars:
+            temp_vars = task_vars.copy()
+            if 'hostvars' in temp_vars['vars']:
               del temp_vars['hostvars']
 
             # Create a new searchpath list to assign to the templar environment's file
